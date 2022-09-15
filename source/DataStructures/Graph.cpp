@@ -9,9 +9,9 @@ Graph::~Graph()
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 bool Graph::AddVertex(int vertex)
 {
-    if (find(vertices.begin(), vertices.end(), vertex) == vertices.end())
+    if (!ContainsVertex(vertex))
     {
-        vertices.push_back(vertex);
+        vertex_vector[vertex] = 0;
         return true;
     }
     return false;
@@ -19,93 +19,122 @@ bool Graph::AddVertex(int vertex)
 
 bool Graph::RemoveVertex(int vertex)
 {
-    std::vector<int>::iterator it = find(vertices.begin(), vertices.end(), vertex);
-    if (it == vertices.end())
+    std::map<int, int>::iterator it;
+    it = vertex_vector.find(vertex);
+    if (it == vertex_vector.end())
         return false;
-    vertices.erase(it);
+    vertex_vector.erase(it);
     return true;
 }
 
 bool Graph::AddEdge(int vertex1, int vertex2)
 {
-    for (auto e : edges)
-        if (e.GetSource() == vertex1 && e.GetDestination() == vertex2)
-            return false;
-    std::vector<int>::iterator it1 = find(vertices.begin(), vertices.end(), vertex1);
-    std::vector<int>::iterator it2 = find(vertices.begin(), vertices.end(), vertex2);
-    if (it1 == vertices.end() || it2 == vertices.end())
+    if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
         return false;
-    edges.push_back(Edge(vertex1, vertex2));
+    std::multimap<int, int>::iterator it = s_to_d.find(vertex1);
+    if (it != s_to_d.end())
+        for (; it->first == vertex1; it++)
+            if (it->second == vertex2)
+                return false;
+    s_to_d.insert(std::pair(vertex1, vertex2));
+    d_to_s.insert(std::pair(vertex2, vertex1));
     return true;
 }
 
 bool Graph::RemoveEdge(int vertex1, int vertex2)
 {
-    std::vector<Edge>::iterator it;
-    for (it = edges.begin(); it != edges.end(); it++)
-    {
-        if (it->GetSource() == vertex1 && it->GetDestination() == vertex2)
-        {
-            edges.erase(it);
-            return true;
-        }
-    }
+    int flag = 0;
+    if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
+        return false;
+    std::multimap<int, int>::iterator it;
+    it = s_to_d.find(vertex1);
+    if (it != s_to_d.end())
+        for (; it->first == vertex1; it++)
+            if (it->second == vertex2)
+            {
+                s_to_d.erase(it);
+                flag = 1;
+            }
+    it = d_to_s.find(vertex2);
+    if (it != d_to_s.end())
+        for (; it->first == vertex2; it++)
+            if (it->second == vertex1)
+            {
+                d_to_s.erase(it);
+                flag = 1;
+            }
+    if (flag == 1)
+        return true;
     return false;
 }
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 int Graph::CountVertices() const
 {
-    return vertices.size();
+    return vertex_vector.size();
 }
 
 int Graph::CountEdges() const
 {
-    return edges.size();
+    return s_to_d.size();
 }
 
 bool Graph::ContainsVertex(int vertex) const
 {
-    if (find(vertices.begin(), vertices.end(), vertex) == vertices.end())
+    if (vertex_vector.find(vertex) == vertex_vector.end())
         return false;
     return true;
 }
 
 bool Graph::ContainsEdge(int vertex1, int vertex2) const
 {
-    std::vector<Edge>::const_iterator it; //在常函数里，使用const_iterator
-    for (it = edges.begin(); it != edges.end(); it++)
-        if (it->GetSource() == vertex1 && it->GetDestination() == vertex2)
-            return true;
+    std::multimap<int, int>::const_iterator it;
+    it = s_to_d.find(vertex1);
+    if (it != s_to_d.end())
+        for (; it->first == vertex1; it++)
+            if (it->second == vertex2)
+                return true;
     return false;
 }
 
 std::vector<int> Graph::GetVertices() const
 {
-    return vertices;
+    std::map<int, int>::const_iterator it = vertex_vector.begin();
+    std::vector<int> v;
+    for (; it != vertex_vector.end(); it++)
+        v.push_back(it->first);
+    return v;
 }
 
 std::vector<Edge> Graph::GetEdges() const
 {
-    return edges;
+    std::multimap<int, int>::const_iterator it = s_to_d.begin();
+    std::vector<Edge> v;
+    for (; it != s_to_d.end(); it++)
+        v.push_back(Edge(it->first, it->second));
+    return v;
 }
 
 std::vector<Edge> Graph::GetIncomingEdges(int vertex) const
 {
     std::vector<Edge> new_vector;
-    for (auto e : edges)
-    {
-        if (e.GetDestination() == vertex)
-            new_vector.push_back(e);
-    }
+    if (!ContainsVertex(vertex))
+        return new_vector;
+    std::multimap<int, int>::const_iterator it = d_to_s.find(vertex);
+    if (it != d_to_s.end())
+        for (; it->first == vertex; it++)
+            new_vector.push_back(Edge(it->second, it->first));
     return new_vector;
 }
 
 std::vector<Edge> Graph::GetOutgoingEdges(int vertex) const
 {
     std::vector<Edge> new_vector;
-    for (auto e : edges)
-        if (e.GetSource() == vertex)
-            new_vector.push_back(e);
+    if (!ContainsVertex(vertex))
+        return new_vector;
+    std::multimap<int, int>::const_iterator it = s_to_d.find(vertex);
+    if (it != s_to_d.end())
+        for (; it->first == vertex; it++)
+            new_vector.push_back(Edge(it->first, it->second));
     return new_vector;
 }
 
@@ -118,9 +147,12 @@ int Graph::GetDegree(int vertex) const
 
 std::vector<int> Graph::GetNeighbors(int vertex) const
 {
-    std::vector<Edge> edge_vector = GetOutgoingEdges(vertex);
-    std::vector<int> vertex_vector;
-    for (auto e : edge_vector)
-        vertex_vector.push_back(e.GetDestination());
-    return vertex_vector;
+    std::vector<int> new_vector;
+    if (!ContainsVertex(vertex))
+        return new_vector;
+    std::multimap<int, int>::const_iterator it = s_to_d.find(vertex);
+    if (it != s_to_d.end())
+        for (; it->first == vertex; it++)
+            new_vector.push_back(it->second);
+    return new_vector;
 }
