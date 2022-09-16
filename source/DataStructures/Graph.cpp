@@ -12,7 +12,7 @@ bool Graph::AddVertex(int vertex)
     if(ContainsVertex(vertex))
         return false;
     vertices.insert(vertex);
-    true;
+    return true;
 }
 
 bool Graph::RemoveVertex(int vertex)
