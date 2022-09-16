@@ -10,8 +10,7 @@ class Graph
 {
 private:
   std::set<int> vertices;
-  std::multimap<int, int> s_to_d;//first是source，second是destination。
-  std::multimap<int, int> d_to_s;//first是destination，second是source。
+  std::map<int, std::vector<Edge>> edges;
 public:
   Graph();
   ~Graph();

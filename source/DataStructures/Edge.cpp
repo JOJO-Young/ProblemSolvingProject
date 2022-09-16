@@ -15,7 +15,3 @@ int Edge::GetDestination() const
 {
     return destination;
 }
-bool Edge::operator== (const Edge& x) const
-{
-    return (this->source == x.source)&&(this->destination == x.destination);
-}

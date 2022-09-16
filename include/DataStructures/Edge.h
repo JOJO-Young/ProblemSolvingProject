@@ -10,7 +10,6 @@ public:
 public:
   int GetSource() const;
   int GetDestination() const;
-  bool operator== (const Edge& x) const;
 
 private:
   int source;
