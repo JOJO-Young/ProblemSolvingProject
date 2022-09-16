@@ -1,9 +1,10 @@
 #ifndef WEIGHTEDGRAPH_H
 #define WEIGHTEDGRAPH_H
+
 #include <set>
 #include <map>
 #include <vector>
-#include <DataStructures/WeightedEdge.h>
+#include <WeightedEdge.h>
 
 class WeightedGraph
 {
