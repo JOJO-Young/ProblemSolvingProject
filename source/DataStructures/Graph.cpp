@@ -9,7 +9,10 @@ Graph::~Graph()
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 bool Graph::AddVertex(int vertex)
 {
+    if(ContainsVertex(vertex))
+        return false;
     vertices.insert(vertex);
+    true;
 }
 
 bool Graph::RemoveVertex(int vertex)
