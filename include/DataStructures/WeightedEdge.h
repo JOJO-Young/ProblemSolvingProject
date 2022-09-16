@@ -1,6 +1,7 @@
 #ifndef WEIGHTEDGE_H
 #define WEIGHTEDGE_H
-#include <Edge.h>
+
+#include <DataStructures/Edge.h>
 class WeightedEdge : public Edge
 {
 public:
