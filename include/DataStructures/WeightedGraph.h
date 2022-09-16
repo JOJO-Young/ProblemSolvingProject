@@ -4,7 +4,7 @@
 #include <set>
 #include <map>
 #include <vector>
-#include <WeightedEdge.h>
+#include <DataStructures/WeightedEdge.h>
 
 class WeightedGraph
 {
