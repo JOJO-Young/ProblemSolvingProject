@@ -9,21 +9,16 @@ Graph::~Graph()
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 bool Graph::AddVertex(int vertex)
 {
-    if (!ContainsVertex(vertex))
-    {
-        vertex_vector[vertex] = 0;
-        return true;
-    }
-    return false;
+    vertices.insert(vertex);
 }
 
 bool Graph::RemoveVertex(int vertex)
 {
-    std::map<int, int>::iterator it;
-    it = vertex_vector.find(vertex);
-    if (it == vertex_vector.end())
+    std::set<int>::iterator it;
+    it = vertices.find(vertex);
+    if (it == vertices.end())
         return false;
-    vertex_vector.erase(it);
+    vertices.erase(it);
     return true;
 }
 
@@ -54,6 +49,7 @@ bool Graph::RemoveEdge(int vertex1, int vertex2)
             {
                 s_to_d.erase(it);
                 flag = 1;
+                break;
             }
     it = d_to_s.find(vertex2);
     if (it != d_to_s.end())
@@ -62,6 +58,7 @@ bool Graph::RemoveEdge(int vertex1, int vertex2)
             {
                 d_to_s.erase(it);
                 flag = 1;
+                break;
             }
     if (flag == 1)
         return true;
@@ -70,7 +67,7 @@ bool Graph::RemoveEdge(int vertex1, int vertex2)
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 int Graph::CountVertices() const
 {
-    return vertex_vector.size();
+    return vertices.size();
 }
 
 int Graph::CountEdges() const
@@ -80,7 +77,7 @@ int Graph::CountEdges() const
 
 bool Graph::ContainsVertex(int vertex) const
 {
-    if (vertex_vector.find(vertex) == vertex_vector.end())
+    if (vertices.find(vertex) == vertices.end())
         return false;
     return true;
 }
@@ -98,10 +95,10 @@ bool Graph::ContainsEdge(int vertex1, int vertex2) const
 
 std::vector<int> Graph::GetVertices() const
 {
-    std::map<int, int>::const_iterator it = vertex_vector.begin();
+    std::set<int>::const_iterator it = vertices.begin();
     std::vector<int> v;
-    for (; it != vertex_vector.end(); it++)
-        v.push_back(it->first);
+    for (; it != vertices.end(); it++)
+        v.push_back(*it);
     return v;
 }
 

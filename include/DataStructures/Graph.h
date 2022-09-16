@@ -1,15 +1,15 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include <set>
 #include <map>
-#include <utility>
 #include <vector>
 #include <DataStructures/Edge.h>
 
 class Graph
 {
 private:
-  std::map<int, int> vertex_vector;//只有第一个有效，当作存点的容器。
+  std::set<int> vertices;
   std::multimap<int, int> s_to_d;//first是source，second是destination。
   std::multimap<int, int> d_to_s;//first是destination，second是source。
 public:
