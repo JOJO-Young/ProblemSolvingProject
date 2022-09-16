@@ -133,3 +133,9 @@ CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o
  /usr/include/c++/11/bits/unordered_map.h
  /usr/include/c++/11/pstl/execution_defs.h
 
+CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o
+ /home/jojo/Documents/Project/PS/source/DataStructures/WeightedEdge.cpp
+ /usr/include/stdc-predef.h
+ /home/jojo/Documents/Project/PS/include/DataStructures/WeightedEdge.h
+ /home/jojo/Documents/Project/PS/include/DataStructures/Edge.h
+
