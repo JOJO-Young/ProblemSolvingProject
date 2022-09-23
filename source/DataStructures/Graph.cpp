@@ -158,7 +158,7 @@ std::vector<int> Graph::GetNeighbors(int vertex) const
     std::vector<Edge> temp;
     std::vector<int> ans_v;
     temp = GetOutgoingEdges(vertex);
-    for(auto x : temp)
+    for (auto x : temp)
         ans_v.push_back(x.GetDestination());
     return ans_v;
 }
