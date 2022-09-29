@@ -72,7 +72,7 @@ bool WeightedGraph<T>::AddEdge(int vertex1, int vertex2, T weight)
 {
     if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
         return false;
-    T std::map<int, std::vector<WeightedEdge>>::iterator it = edges.find(vertex1);
+    std::map<int, std::vector<WeightedEdge<T>>>::iterator it = edges.find(vertex1);
     if (it == edges.end())
         edges[vertex1].push_back(WeightedEdge<T>(vertex1, vertex2, weight));
     else

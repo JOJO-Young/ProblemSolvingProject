@@ -55,11 +55,9 @@ CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o: \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/functional_hash.h \
  /usr/include/c++/11/bits/hash_bytes.h \
- /usr/include/c++/11/bits/vector.tcc \
- /home/jojo/Documents/Project/PS/include/DataStructures/WeightedEdge.h \
- /home/jojo/Documents/Project/PS/include/DataStructures/Edge.h \
- /usr/include/c++/11/algorithm /usr/include/c++/11/bits/stl_algo.h \
- /usr/include/c++/11/cstdlib /usr/include/stdlib.h \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/bits/stl_algo.h /usr/include/c++/11/cstdlib \
+ /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
@@ -106,5 +104,7 @@ CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o: \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/cassert \
- /usr/include/assert.h
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /home/jojo/Documents/Project/PS/include/DataStructures/WeightedEdge.h \
+ /home/jojo/Documents/Project/PS/include/DataStructures/Edge.h \
+ /usr/include/c++/11/cassert /usr/include/assert.h
