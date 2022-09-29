@@ -11,7 +11,7 @@ class WeightedGraph
 {
 private:
     std::set<int> vertices;
-    T std::map<int, std::vector<WeightedEdge<T>>> edges;
+    std::map<int, std::vector<WeightedEdge<T>>> edges;
 
 public:
     WeightedGraph();
