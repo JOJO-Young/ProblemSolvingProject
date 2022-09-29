@@ -47,7 +47,7 @@ WeightedGraph<T>::~WeightedGraph()
 {
 }
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-/*template <class T>
+template <class T>
 bool WeightedGraph<T>::AddVertex(int vertex)
 {
     if (ContainsVertex(vertex))
@@ -231,5 +231,5 @@ std::vector<int> WeightedGraph<T>::GetNeighbors(int vertex) const
     for (auto x : temp)
         ans_v.push_back(x.GetDestination());
     return ans_v;
-}*/
+}
 #endif

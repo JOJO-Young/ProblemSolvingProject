@@ -24,7 +24,7 @@ public:
     int GetDegree(int vertex) const override;
 };
 
-/*template <class T>
+template <class T>
 UndirectedWeightedGraph<T>::UndirectedWeightedGraph()
 {
     num_selfring = 0;
@@ -112,5 +112,5 @@ int UndirectedWeightedGraph<T>::GetDegree(int vertex) const
         return WeightedGraph<T>::GetDegree(vertex);
     else
         return WeightedGraph<T>::GetDegree(vertex) + vertex_to_selfring.at(vertex);
-}*/
+}
 #endif
