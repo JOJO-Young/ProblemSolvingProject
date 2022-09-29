@@ -1,4 +1,4 @@
-/*
+
 #include <DataStructures/WeightedEdge.h>
 
 template <class T>
@@ -16,4 +16,4 @@ T WeightedEdge<T>::GetWeight() const
 {
     return weight;
 }
-*/
+

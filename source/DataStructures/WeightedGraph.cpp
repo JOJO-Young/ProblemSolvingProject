@@ -1,4 +1,4 @@
-/*
+
 #include <DataStructures/WeightedGraph.h>
 
 template <class T>
@@ -122,10 +122,8 @@ T WeightedGraph<T>::GetWeight(int vertex1, int vertex2) const
             return i->GetWeight();
     return -1;
 }
-
-template <class T>
-std::vector<int> WeightedGraph<T>::GetVertices() const
-{
+ WeightedGraph<T>::GetDegree(vertex) + vertex_to_selfring.at(vertex);
+}
     std::set<int>::const_iterator it = vertices.begin();
     std::vector<int> v;
     for (; it != vertices.end(); it++)
@@ -195,4 +193,3 @@ std::vector<int> WeightedGraph<T>::GetNeighbors(int vertex) const
         ans_v.push_back(x.GetDestination());
     return ans_v;
 }
-*/
