@@ -92,7 +92,7 @@ bool WeightedGraph<T>::RemoveEdge(int vertex1, int vertex2)
 {
     if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
         return false;
-    std::map<T><int, std::vector<WeightedEdge<T>>>::iterator it = edges.find(vertex1);
+    std::map<int, std::vector<WeightedEdge<T>>>::iterator it = edges.find(vertex1);
     if (it == edges.end())
         return false;
     else
