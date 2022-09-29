@@ -90,12 +90,12 @@ bool WeightedGraph<T>::RemoveEdge(int vertex1, int vertex2)
 {
     if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
         return false;
-    std::map<int, std::vector<WeightedEdge<T>>>::iterator it = edges.find(vertex1);
+    class std::map<int, std::vector<WeightedEdge<T>>>::iterator it = edges.find(vertex1);
     if (it == edges.end())
         return false;
     else
     {
-        for (T std::vector<WeightedEdge<T>>::iterator i = edges[vertex1].begin(); i != edges[vertex1].end(); i++)
+        for (class std::vector<WeightedEdge<T>>::iterator i = edges[vertex1].begin(); i != edges[vertex1].end(); i++)
         {
             if (i->GetDestination() == vertex2)
             {
@@ -117,7 +117,7 @@ template <class T>
 int WeightedGraph<T>::CountEdges() const
 {
     int ans = 0;
-    for (T std::map<int, std::vector<WeightedEdge<T>>>::const_iterator i = edges.begin(); i != edges.end(); i++)
+    for (class std::map<int, std::vector<WeightedEdge<T>>>::const_iterator i = edges.begin(); i != edges.end(); i++)
         ans = ans + i->second.size();
     return ans;
 }
@@ -135,7 +135,7 @@ bool WeightedGraph<T>::ContainsEdge(int vertex1, int vertex2) const
 {
     if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
         return false;
-    T std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
+    class std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
     it = edges.find(vertex1);
     if (it == edges.end())
         return false;
@@ -150,11 +150,11 @@ T WeightedGraph<T>::GetWeight(int vertex1, int vertex2) const
 {
     if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
         return false;
-    T std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
+    class std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
     it = edges.find(vertex1);
     if (it == edges.end())
         return -1;
-    for (T std::vector<WeightedEdge<T>>::const_iterator i = edges.at(vertex1).begin(); i != edges.at(vertex1).end(); i++)
+    for (class std::vector<WeightedEdge<T>>::const_iterator i = edges.at(vertex1).begin(); i != edges.at(vertex1).end(); i++)
         if (i->GetDestination() == vertex2)
             return i->GetWeight();
     return -1;
@@ -174,7 +174,7 @@ template <class T>
 std::vector<WeightedEdge<T>> WeightedGraph<T>::GetEdges() const
 {
     std::vector<WeightedEdge<T>> ans_v;
-    T std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
+    class std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
     it = edges.begin();
     for (; it != edges.end(); it++)
     {
@@ -190,7 +190,7 @@ std::vector<WeightedEdge<T>> WeightedGraph<T>::GetIncomingEdges(int vertex) cons
     std::vector<WeightedEdge<T>> ans_v;
     if (!ContainsVertex(vertex))
         return ans_v;
-    T std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
+    class std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
     it = edges.begin();
     for (; it != edges.end(); it++)
     {
@@ -207,7 +207,7 @@ std::vector<WeightedEdge<T>> WeightedGraph<T>::GetOutgoingEdges(int vertex) cons
     std::vector<WeightedEdge<T>> ans_v;
     if (!ContainsVertex(vertex))
         return ans_v;
-    T std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
+    class std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
     it = edges.find(vertex);
     if (it != edges.end())
         return edges.at(vertex);
