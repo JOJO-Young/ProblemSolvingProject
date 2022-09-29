@@ -1,12 +1,16 @@
 #include <DataStructures/WeightedEdge.h>
-WeightedEdge::WeightedEdge(int source, int destination, int weight) : Edge(source, destination), weight(weight)
-{
-}
-WeightedEdge::~WeightedEdge()
+template <class T>
+WeightedEdge<T>::WeightedEdge(int source, int destination, T weight) : Edge(source, destination), weight(weight)
 {
 }
 
-int WeightedEdge::GetWeight() const
+template<class T>
+WeightedEdge<T>::~WeightedEdge()
+{
+}
+
+template<class T>
+T WeightedEdge<T>::GetWeight() const
 {
     return weight;
 }

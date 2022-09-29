@@ -2,16 +2,17 @@
 #define WEIGHTEDGE_H
 
 #include <DataStructures/Edge.h>
+template<class T>
 class WeightedEdge : public Edge
 {
 public:
-    WeightedEdge(int source, int destination, int weight);
+    WeightedEdge(int source, int destination, T weight);
     ~WeightedEdge();
 
 public:
-    int GetWeight() const;
+    T GetWeight() const;
 
 private:
-    int weight;
+    T weight;
 };
 #endif

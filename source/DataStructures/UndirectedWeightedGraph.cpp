@@ -1,17 +1,20 @@
 #include <DataStructures/UndirectedWeightedGraph.h>
 
-UndirectedWeightedGraph::UndirectedWeightedGraph()
+template <class T>
+UndirectedWeightedGraph<T>::UndirectedWeightedGraph()
 {
     num_selfring = 0;
 }
-UndirectedWeightedGraph::~UndirectedWeightedGraph()
+template <class T>
+UndirectedWeightedGraph<T>::~UndirectedWeightedGraph()
 {
 }
 
-bool UndirectedWeightedGraph::AddEdge(int vertex1, int vertex2, int weight)
+template <class T>
+bool UndirectedWeightedGraph<T>::AddEdge(int vertex1, int vertex2, T weight)
 {
-    bool flag1 = WeightedGraph::AddEdge(vertex1, vertex2, weight);
-    bool flag2 = WeightedGraph::AddEdge(vertex2, vertex1, weight);
+    bool flag1 = WeightedGraph<T>::AddEdge(vertex1, vertex2, weight);
+    bool flag2 = WeightedGraph<T>::AddEdge(vertex2, vertex1, weight);
     bool flag = flag1 || flag2;
     if (flag && vertex1 == vertex2)
     {
@@ -23,10 +26,12 @@ bool UndirectedWeightedGraph::AddEdge(int vertex1, int vertex2, int weight)
     }
     return flag;
 }
-bool UndirectedWeightedGraph::RemoveEdge(int vertex1, int vertex2)
+
+template <class T>
+bool UndirectedWeightedGraph<T>::RemoveEdge(int vertex1, int vertex2)
 {
-    bool flag1 = WeightedGraph::RemoveEdge(vertex1, vertex2);
-    bool flag2 = WeightedGraph::RemoveEdge(vertex2, vertex1);
+    bool flag1 = WeightedGraph<T>::RemoveEdge(vertex1, vertex2);
+    bool flag2 = WeightedGraph<T>::RemoveEdge(vertex2, vertex1);
     bool flag = flag1 || flag2;
     if (flag && vertex1 == vertex2)
     {
@@ -36,15 +41,18 @@ bool UndirectedWeightedGraph::RemoveEdge(int vertex1, int vertex2)
     return flag;
 }
 
-int UndirectedWeightedGraph::CountEdges() const
+template <class T>
+int UndirectedWeightedGraph<T>::CountEdges() const
 {
-    return (WeightedGraph::CountEdges() + num_selfring) / 2;
+    return (WeightedGraph<T>::CountEdges() + num_selfring) / 2;
 }
-std::vector<WeightedEdge> UndirectedWeightedGraph::GetEdges() const
+
+template <class T>
+std::vector<WeightedEdge<T>> UndirectedWeightedGraph<T>::GetEdges() const
 {
-    std::vector<WeightedEdge> ans_v;
-    std::map<int, std::vector<WeightedEdge>> record_map;
-    std::vector<WeightedEdge> ans_set = WeightedGraph::GetEdges();
+    std::vector<WeightedEdge<T>> ans_v;
+    std::map<int, std::vector<WeightedEdge<T>>> record_map;
+    std::vector<WeightedEdge<T>> ans_set = WeightedGraph<T>::GetEdges();
     for (auto x : ans_set)
     {
         if (record_map.find(x.GetSource()) == record_map.end())
@@ -72,10 +80,12 @@ std::vector<WeightedEdge> UndirectedWeightedGraph::GetEdges() const
     }
     return ans_v;
 }
-int UndirectedWeightedGraph::GetDegree(int vertex) const
+
+template <class T>
+int UndirectedWeightedGraph<T>::GetDegree(int vertex) const
 {
     if (vertex_to_selfring.find(vertex) == vertex_to_selfring.end())
-        return WeightedGraph::GetDegree(vertex);
+        return WeightedGraph<T>::GetDegree(vertex);
     else
-        return WeightedGraph::GetDegree(vertex) + vertex_to_selfring.at(vertex);
+        return WeightedGraph<T>::GetDegree(vertex) + vertex_to_selfring.at(vertex);
 }
