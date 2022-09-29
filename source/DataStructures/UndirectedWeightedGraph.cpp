@@ -1,3 +1,4 @@
+/*
 #include <DataStructures/UndirectedWeightedGraph.h>
 
 template <class T>
@@ -89,3 +90,4 @@ int UndirectedWeightedGraph<T>::GetDegree(int vertex) const
     else
         return WeightedGraph<T>::GetDegree(vertex) + vertex_to_selfring.at(vertex);
 }
+*/
