@@ -22,8 +22,6 @@ public:
     int CountEdges() const override;
     std::vector<WeightedEdge<T>> GetEdges() const override;
     int GetDegree(int vertex) const override;
-
-
 };
 
 #endif
