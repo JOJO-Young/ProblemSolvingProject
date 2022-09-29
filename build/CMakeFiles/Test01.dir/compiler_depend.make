@@ -69,8 +69,6 @@ CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o: ../tests/01-hello-world.cpp \
   /usr/include/c++/11/bits/functional_hash.h \
   /usr/include/c++/11/bits/hash_bytes.h \
   /usr/include/c++/11/bits/vector.tcc \
-  ../include/DataStructures/WeightedEdge.h \
-  ../include/DataStructures/Edge.h \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/bits/stl_algo.h \
   /usr/include/c++/11/cstdlib \
@@ -127,6 +125,8 @@ CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o: ../tests/01-hello-world.cpp \
   /usr/include/c++/11/bits/enable_special_members.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/pstl/execution_defs.h \
+  ../include/DataStructures/WeightedEdge.h \
+  ../include/DataStructures/Edge.h \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h
 
