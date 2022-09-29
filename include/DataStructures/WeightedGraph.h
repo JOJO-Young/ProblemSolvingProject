@@ -4,6 +4,7 @@
 #include <set>
 #include <map>
 #include <vector>
+#include <algorithm>
 #include <DataStructures/WeightedEdge.h>
 
 template <class T>
@@ -36,9 +37,6 @@ public:
     virtual int GetDegree(int vertex) const;
     std::vector<int> GetNeighbors(int vertex) const;
 };
-
-#include <DataStructures/WeightedGraph.h>
-#include <algorithm>
 
 template <class T>
 WeightedGraph<T>::WeightedGraph()
@@ -74,7 +72,7 @@ bool WeightedGraph<T>::AddEdge(int vertex1, int vertex2, T weight)
 {
     if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
         return false;
-    T std::map<int, std::vector<WeightedEdge<T>>>::iterator it = edges.find(vertex1);
+    T std::map<int, std::vector<WeightedEdge>>::iterator it = edges.find(vertex1);
     if (it == edges.end())
         edges[vertex1].push_back(WeightedEdge<T>(vertex1, vertex2, weight));
     else
