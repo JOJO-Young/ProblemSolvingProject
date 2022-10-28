@@ -41,7 +41,7 @@ std::optional<int> DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *gra
     catched.insert(start);
     for (auto x : graph->GetNeighbors(start))
       if (catched.find(start) == catched.end())
-        FindFirstVertex(graph, x, action);
+        FindFirstVertex(graph, x, predicate);
     return ans;
   }
   return std::nullopt;

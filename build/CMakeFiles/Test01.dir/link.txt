@@ -1,1 +1,1 @@
-/usr/local/bin/g++ -g CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o -o Test01  libGraphLibrary.a 
+/usr/local/bin/c++ -g CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o -o Test01  libGraphLibrary.a 

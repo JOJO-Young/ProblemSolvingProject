@@ -64,6 +64,7 @@ std::optional<int> BreadthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *g
         }
       }
     }
+    return std::nullopt;
   }
   return std::nullopt;
 }
