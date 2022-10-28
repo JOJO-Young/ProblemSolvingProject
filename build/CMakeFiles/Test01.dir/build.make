@@ -73,15 +73,15 @@ CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o: CMakeFiles/Test01.dir/flags.ma
 CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o: ../tests/01-hello-world.cpp
 CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o: CMakeFiles/Test01.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jojo/Documents/Project/PS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o -MF CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o.d -o CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o -c /home/jojo/Documents/Project/PS/tests/01-hello-world.cpp
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o -MF CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o.d -o CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o -c /home/jojo/Documents/Project/PS/tests/01-hello-world.cpp
 
 CMakeFiles/Test01.dir/tests/01-hello-world.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Test01.dir/tests/01-hello-world.cpp.i"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/tests/01-hello-world.cpp > CMakeFiles/Test01.dir/tests/01-hello-world.cpp.i
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/tests/01-hello-world.cpp > CMakeFiles/Test01.dir/tests/01-hello-world.cpp.i
 
 CMakeFiles/Test01.dir/tests/01-hello-world.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Test01.dir/tests/01-hello-world.cpp.s"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/tests/01-hello-world.cpp -o CMakeFiles/Test01.dir/tests/01-hello-world.cpp.s
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/tests/01-hello-world.cpp -o CMakeFiles/Test01.dir/tests/01-hello-world.cpp.s
 
 # Object files for target Test01
 Test01_OBJECTS = \

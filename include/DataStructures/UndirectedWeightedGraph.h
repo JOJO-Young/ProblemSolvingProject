@@ -4,7 +4,7 @@
 #include <DataStructures/WeightedGraph.h>
 
 template <class T>
-class UndirectedWeightedGraph:public WeightedGraph<T>
+class UndirectedWeightedGraph : public WeightedGraph<T>
 {
 private:
     int num_selfring;

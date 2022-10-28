@@ -73,85 +73,85 @@ CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o: CMakeFiles/GraphLi
 CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o: ../source/DataStructures/Edge.cpp
 CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o: CMakeFiles/GraphLibrary.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jojo/Documents/Project/PS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/Edge.cpp
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/Edge.cpp
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.i"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/Edge.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.i
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/Edge.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.i
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.s"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/Edge.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.s
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/Edge.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.s
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o: CMakeFiles/GraphLibrary.dir/flags.make
 CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o: ../source/DataStructures/Graph.cpp
 CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o: CMakeFiles/GraphLibrary.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jojo/Documents/Project/PS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/Graph.cpp
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/Graph.cpp
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.i"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/Graph.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.i
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/Graph.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.i
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.s"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/Graph.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.s
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/Graph.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.s
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o: CMakeFiles/GraphLibrary.dir/flags.make
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o: ../source/DataStructures/UndirectedGraph.cpp
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o: CMakeFiles/GraphLibrary.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jojo/Documents/Project/PS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedGraph.cpp
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedGraph.cpp
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.i"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedGraph.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.i
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedGraph.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.i
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.s"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedGraph.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.s
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedGraph.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.s
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o: CMakeFiles/GraphLibrary.dir/flags.make
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o: ../source/DataStructures/UndirectedWeightedGraph.cpp
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o: CMakeFiles/GraphLibrary.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jojo/Documents/Project/PS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedWeightedGraph.cpp
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedWeightedGraph.cpp
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.i"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedWeightedGraph.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.i
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedWeightedGraph.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.i
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.s"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedWeightedGraph.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.s
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedWeightedGraph.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.s
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o: CMakeFiles/GraphLibrary.dir/flags.make
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o: ../source/DataStructures/WeightedEdge.cpp
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o: CMakeFiles/GraphLibrary.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jojo/Documents/Project/PS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/WeightedEdge.cpp
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/WeightedEdge.cpp
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.i"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/WeightedEdge.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.i
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/WeightedEdge.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.i
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.s"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/WeightedEdge.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.s
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/WeightedEdge.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.s
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o: CMakeFiles/GraphLibrary.dir/flags.make
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o: ../source/DataStructures/WeightedGraph.cpp
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o: CMakeFiles/GraphLibrary.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jojo/Documents/Project/PS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/WeightedGraph.cpp
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o -MF CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o.d -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/WeightedGraph.cpp
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.i"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/WeightedGraph.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.i
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jojo/Documents/Project/PS/source/DataStructures/WeightedGraph.cpp > CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.i
 
 CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.s"
-	/usr/local/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/WeightedGraph.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.s
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jojo/Documents/Project/PS/source/DataStructures/WeightedGraph.cpp -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.s
 
 # Object files for target GraphLibrary
 GraphLibrary_OBJECTS = \

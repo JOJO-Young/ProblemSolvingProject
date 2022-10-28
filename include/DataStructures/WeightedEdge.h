@@ -2,7 +2,7 @@
 #define WEIGHTEDGE_H
 
 #include <DataStructures/Edge.h>
-template<class T>
+template <class T>
 class WeightedEdge : public Edge
 {
 public:
@@ -21,12 +21,12 @@ WeightedEdge<T>::WeightedEdge(int source, int destination, T weight) : Edge(sour
 {
 }
 
-template<class T>
+template <class T>
 WeightedEdge<T>::~WeightedEdge()
 {
 }
 
-template<class T>
+template <class T>
 T WeightedEdge<T>::GetWeight() const
 {
     return weight;
