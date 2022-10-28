@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/jojo/Documents/Project/PS/build",
+  "command": "/usr/local/bin/g++  -I/home/jojo/Documents/Project/PS/include -g -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/Edge.cpp",
+  "file": "/home/jojo/Documents/Project/PS/source/DataStructures/Edge.cpp"
+},
+{
+  "directory": "/home/jojo/Documents/Project/PS/build",
+  "command": "/usr/local/bin/g++  -I/home/jojo/Documents/Project/PS/include -g -o CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/Graph.cpp",
+  "file": "/home/jojo/Documents/Project/PS/source/DataStructures/Graph.cpp"
+},
+{
+  "directory": "/home/jojo/Documents/Project/PS/build",
+  "command": "/usr/local/bin/g++  -I/home/jojo/Documents/Project/PS/include -g -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedGraph.cpp",
+  "file": "/home/jojo/Documents/Project/PS/source/DataStructures/UndirectedGraph.cpp"
+},
+{
+  "directory": "/home/jojo/Documents/Project/PS/build",
+  "command": "/usr/local/bin/g++  -I/home/jojo/Documents/Project/PS/include -g -o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/UndirectedWeightedGraph.cpp",
+  "file": "/home/jojo/Documents/Project/PS/source/DataStructures/UndirectedWeightedGraph.cpp"
+},
+{
+  "directory": "/home/jojo/Documents/Project/PS/build",
+  "command": "/usr/local/bin/g++  -I/home/jojo/Documents/Project/PS/include -g -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/WeightedEdge.cpp",
+  "file": "/home/jojo/Documents/Project/PS/source/DataStructures/WeightedEdge.cpp"
+},
+{
+  "directory": "/home/jojo/Documents/Project/PS/build",
+  "command": "/usr/local/bin/g++  -I/home/jojo/Documents/Project/PS/include -g -o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o -c /home/jojo/Documents/Project/PS/source/DataStructures/WeightedGraph.cpp",
+  "file": "/home/jojo/Documents/Project/PS/source/DataStructures/WeightedGraph.cpp"
+},
+{
+  "directory": "/home/jojo/Documents/Project/PS/build",
+  "command": "/usr/local/bin/g++  -I/home/jojo/Documents/Project/PS/include -g -o CMakeFiles/Test01.dir/tests/01-hello-world.cpp.o -c /home/jojo/Documents/Project/PS/tests/01-hello-world.cpp",
+  "file": "/home/jojo/Documents/Project/PS/tests/01-hello-world.cpp"
+}
+]
