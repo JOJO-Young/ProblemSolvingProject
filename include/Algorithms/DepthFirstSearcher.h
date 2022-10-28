@@ -4,50 +4,79 @@
 #include <functional>
 #include <optional>
 #include <set>
+#include <stack>
 
 template <typename TGraph>
 class DepthFirstSearcher
 {
-private:
-  static std::optional<int> ans;
-  static std::set<int> catched;
-
 public:
   static void VisitAllVertices(const TGraph *graph, int start, std::function<void(int)> action);
   static std::optional<int> FindFirstVertex(const TGraph *graph, int start, std::function<bool(int)> predicate);
 };
 
 template <typename TGraph>
-std::optional<int> DepthFirstSearcher<TGraph>::ans = std::nullopt;
-
-template <typename TGraph>
-std::set<int> DepthFirstSearcher<TGraph>::catched;
-
-template <typename TGraph>
 void DepthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start, std::function<void(int)> action)
 {
+  std::stack<int> s;
+  std::set<int> catched;
   if (graph->ContainsVertex(start))
   {
-    catched.insert(start);
-    action(start);
-    for (auto x : graph->GetNeighbors(start))
-      if (catched.find(start) == catched.end())
-        VisitAllVertices(graph, x, action);
+    s.push(start);
+    while (!s.empty())
+    {
+      int tmp = s.top();
+      if (catched.find(tmp) == catched.end())
+      {
+        action(tmp);
+        catched.insert(tmp);
+      }
+      bool find = false;
+      for (auto x : graph->GetNeighbors(tmp))
+      {
+        if (catched.find(x) == catched.end())
+        {
+          s.push(x);
+          find = true;
+          break;
+        }
+      }
+      if (!find)
+        s.pop();
+    }
   }
 }
 
 template <typename TGraph>
 std::optional<int> DepthFirstSearcher<TGraph>::FindFirstVertex(const TGraph *graph, int start, std::function<bool(int)> predicate)
 {
+  std::stack<int> s;
+  std::set<int> catched;
   if (graph->ContainsVertex(start))
   {
-    if (predicate(start))
-      ans = start;
-    catched.insert(start);
-    for (auto x : graph->GetNeighbors(start))
-      if (catched.find(start) == catched.end())
-        FindFirstVertex(graph, x, predicate);
-    return ans;
+    s.push(start);
+    while (!s.empty())
+    {
+      int tmp = s.top();
+      if (catched.find(tmp) == catched.end())
+      {
+        if(predicate(tmp))
+          return tmp;
+        catched.insert(tmp);
+      }
+      bool find = false;
+      for (auto x : graph->GetNeighbors(tmp))
+      {
+        if (catched.find(x) == catched.end())
+        {
+          s.push(x);
+          find = true;
+          break;
+        }
+      }
+      if (!find)
+        s.pop();
+    }
+    return std::nullopt;
   }
   return std::nullopt;
 }
