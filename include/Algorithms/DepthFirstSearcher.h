@@ -9,12 +9,15 @@ template <typename TGraph>
 class DepthFirstSearcher
 {
 private:
-  std::optional<int> ans = std::nullopt;
+  static std::optional<int> ans;
 
 public:
   static void VisitAllVertices(const TGraph *graph, int start, std::function<void(int)> action);
   static std::optional<int> FindFirstVertex(const TGraph *graph, int start, std::function<bool(int)> predicate);
 };
+
+template <typename TGraph>
+std::optional<int> DepthFirstSearcher<TGraph>::ans = std::nullopt;
 
 template <typename TGraph>
 void DepthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start, std::function<void(int)> action)
