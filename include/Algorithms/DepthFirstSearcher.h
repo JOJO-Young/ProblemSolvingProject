@@ -21,6 +21,9 @@ template <typename TGraph>
 std::optional<int> DepthFirstSearcher<TGraph>::ans = std::nullopt;
 
 template <typename TGraph>
+std::set<int> DepthFirstSearcher<TGraph>::catched;
+
+template <typename TGraph>
 void DepthFirstSearcher<TGraph>::VisitAllVertices(const TGraph *graph, int start, std::function<void(int)> action)
 {
   if (graph->ContainsVertex(start))
