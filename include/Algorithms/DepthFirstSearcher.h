@@ -5,8 +5,9 @@
 #include <optional>
 
 template <typename TGraph>
-class DepthFirstSearcher {
- public:
+class DepthFirstSearcher
+{
+public:
   static void VisitAllVertices(const TGraph *graph, int start, std::function<void(int)> action);
   static std::optional<int> FindFirstVertex(const TGraph *graph, int start, std::function<bool(int)> predicate);
 };
