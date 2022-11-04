@@ -50,7 +50,7 @@ ShortestPaths<TGraph, TValue>::ShortestPaths(const TGraph<TValue> *graph, int so
   }
   for (auto x : graph->GetVertices())
   {
-    ans_TryGetDistanceTo[x] = INT_MAX;
+    ans_TryGetDistanceTo[x] = INT_MAX / 2;
     ans_TryGetShortestPathTo[x] = std::nullopt;
   }
 }

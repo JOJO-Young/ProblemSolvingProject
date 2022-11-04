@@ -23,7 +23,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
     std::set<int> if_reach; //用来记录这个点是否到达过，相当于vis
     std::map<int, int> pre; // pre<a, b>表示b是a的前继
     std::priority_queue<std::pair<TValue, int>> q;
-    ans_TryGetDistanceTo[source] = 0;
+    this -> ans_TryGetDistanceTo[source] = 0;
     q.push(std::make_pair(0, source));
     if_reach.insert(source);
     while (!q.empty())
@@ -34,7 +34,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
             continue;
         if_reach.insert(now.second);
         for (auto x : graph->GetNeighbors(now.second))
-            if (ans_TryGetDistanceTo[x] - graph->GetWeight(now.second, x) > ans_TryGetDistanceTo[now.second])
+            if (ans_TryGetDistanceTo[x] > ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
             {
                 ans_TryGetDistanceTo[x] = ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
                 pre[x] = now.second;
