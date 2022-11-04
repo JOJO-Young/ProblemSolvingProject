@@ -6,7 +6,7 @@
 #include <queue>
 #include <stack>
 #include <vector>
-#include <Algorithms/ShortestPaths.h>>
+#include <Algorithms/ShortestPaths.h>
 
 template <template <typename> class TGraph, typename TValue>
 class DijkstraShortestPaths : public ShortestPaths
@@ -22,7 +22,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
 {
     std::set<int> if_reach; //用来记录这个点是否到达过，相当于vis
     std::map<int, int> pre; // pre<a, b>表示b是a的前继
-    std::priority_queue<pair<int, int>> q;
+    std::priority_queue<pair<TValue, int>> q;
     ans_TryGetDistanceTo[source] = 0;
     q.push(std::make_pair(0, source));
     if_reach.insert(source);

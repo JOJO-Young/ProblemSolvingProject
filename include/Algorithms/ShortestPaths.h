@@ -33,17 +33,17 @@ ShortestPaths<TGraph, TValue>::ShortestPaths(const TGraph<TValue> *graph, int so
   if (graph->ContainsVertex(source))
   {
     q.push(source);
-    can_reach.insert(source);
+    ans_HasPathTo.insert(source);
     while (!q.empty())
     {
       int tmp = q.front();
       q.pop();
       for (auto x : graph->GetNeighbors(tmp))
       {
-        if (can_reach.find(x) == can_reach.end())
+        if (ans_HasPathTo.find(x) == ans_HasPathTo.end())
         {
           q.push(x);
-          can_reach.insert(x);
+          ans_HasPathTo.insert(x);
         }
       }
     }
