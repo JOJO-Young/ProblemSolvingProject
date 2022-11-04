@@ -63,12 +63,12 @@ bool ShortestPaths<TGraph, TValue>::HasPathTo(int destination) const
 template <template <typename> class TGraph, typename TValue>
 std::optional<TValue> ShortestPaths<TGraph, TValue>::TryGetDistanceTo(int destination) const
 {
-  return ans_TryGetDistanceTo[destination];
+  return ans_TryGetDistanceTo.at(destination);
 }
 
 template <template <typename> class TGraph, typename TValue>
 std::optional<std::vector<int>> ShortestPaths<TGraph, TValue>::TryGetShortestPathTo(int destination) const
 {
-  return ans_TryGetShortestPathTo[destination];
+  return ans_TryGetShortestPathTo.at(destination);
 }
 #endif
