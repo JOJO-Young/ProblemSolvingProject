@@ -9,7 +9,7 @@
 #include <Algorithms/ShortestPaths.h>
 
 template <template <typename> class TGraph, typename TValue>
-class DijkstraShortestPaths : public ShortestPaths
+class DijkstraShortestPaths : public ShortestPaths<TGraph, TValue>
 {
 public:
     DijkstraShortestPaths();
