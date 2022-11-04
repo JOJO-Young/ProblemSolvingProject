@@ -18,7 +18,7 @@ public:
 };
 
 template <template <typename> class TGraph, typename TValue>
-DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue> *graph, int source) : ShortestPaths(graph, source)
+DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue> *graph, int source) : ShortestPaths<TGraph, TValue>(graph, source)
 {
     std::set<int> if_reach; //用来记录这个点是否到达过，相当于vis
     std::map<int, int> pre; // pre<a, b>表示b是a的前继
