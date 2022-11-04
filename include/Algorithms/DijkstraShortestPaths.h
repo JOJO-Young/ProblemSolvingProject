@@ -6,7 +6,7 @@
 #include <queue>
 #include <stack>
 #include <vector>
-#include <ShortestPaths.h>
+#include <Algorithms/ShortestPaths.h>>
 
 template <template <typename> class TGraph, typename TValue>
 class DijkstraShortestPaths : public ShortestPaths
