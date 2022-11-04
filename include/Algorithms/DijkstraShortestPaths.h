@@ -23,7 +23,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
     std::set<int> if_reach; //用来记录这个点是否到达过，相当于vis
     std::map<int, int> pre; // pre<a, b>表示b是a的前继
     std::priority_queue<std::pair<TValue, int>> q;
-    this -> ans_TryGetDistanceTo[source] = 0;
+    this->ans_TryGetDistanceTo[source] = 0;
     q.push(std::make_pair(0, source));
     if_reach.insert(source);
     while (!q.empty())
@@ -34,16 +34,16 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
             continue;
         if_reach.insert(now.second);
         for (auto x : graph->GetNeighbors(now.second))
-            if (ans_TryGetDistanceTo[x] > ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
+            if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
             {
-                ans_TryGetDistanceTo[x] = ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
+                this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
                 pre[x] = now.second;
-                q.push(std::make_pair(-1 * ans_TryGetDistanceTo[x], x));
+                q.push(std::make_pair(-1 * this->ans_TryGetDistanceTo[x], x));
             }
     }
     for (auto x : graph->GetVertices())
-        if (ans_TryGetDistanceTo[x] == INT_MAX)
-            ans_TryGetDistanceTo[x] = std::nullopt;
+        if (this->ans_TryGetDistanceTo[x] == INT_MAX / 2)
+            this->ans_TryGetDistanceTo[x] = std::nullopt;
     for (auto x : graph->GetVertices())
     {
         int record = x;
@@ -68,10 +68,10 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
                 ans.push_back(s.top());
                 s.pop();
             }
-            ans_TryGetShortestPathTo[record] = ans;
+            this -> ans_TryGetShortestPathTo[record] = ans;
         }
         else
-            ans_TryGetShortestPathTo[record] = std::nullopt;
+            this -> ans_TryGetShortestPathTo[record] = std::nullopt;
     }
 }
 
