@@ -78,7 +78,7 @@ std::optional<std::vector<int>> ShortestPaths<TGraph, TValue>::TryGetShortestPat
 {
   if (ans_TryGetShortestPathTo.find(destination) != ans_TryGetShortestPathTo.end())
   {
-    for (auto x : this->ans_TryGetShortestPathTo[destination].value())
+    for (auto x : this->ans_TryGetShortestPathTo.at(destination).value())
       printf("yzy%d\n", x);
     return ans_TryGetShortestPathTo.at(destination);
   }
