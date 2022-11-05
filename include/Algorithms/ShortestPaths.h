@@ -53,9 +53,7 @@ ShortestPaths<TGraph, TValue>::ShortestPaths(const TGraph<TValue> *graph, int so
     }
   }
   for (auto x : graph->GetVertices())
-  {
     ans_TryGetShortestPathTo[x] = std::nullopt;
-  }
 }
 template <template <typename> class TGraph, typename TValue>
 bool ShortestPaths<TGraph, TValue>::HasPathTo(int destination) const

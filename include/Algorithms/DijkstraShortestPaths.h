@@ -68,7 +68,6 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
         }
         if (x == source)
         {
-            s.push(x);
             std::vector<int> ans;
             while (!s.empty())
             {
