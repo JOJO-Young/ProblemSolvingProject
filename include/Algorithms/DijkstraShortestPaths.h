@@ -42,7 +42,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
             {
                 this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
                 pre[x] = now.second;
-                printf("yzy%d %d\n", x, now.second);
+                // printf("yzy%d %d\n", x, now.second);
                 q.push(std::make_pair(this->ans_TryGetDistanceTo[x], x));
             }
             else if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
@@ -76,6 +76,8 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
                 s.pop();
             }
             this->ans_TryGetShortestPathTo[record] = ans;
+            for (auto x : this->ans_TryGetShortestPathTo[record])
+                printf("yzy%d\n", x);
         }
         else
             this->ans_TryGetShortestPathTo[record] = std::nullopt;
