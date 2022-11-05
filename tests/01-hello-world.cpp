@@ -23,8 +23,9 @@ int main()
         for (int j = 1; j <= 6; ++j)
         {
             // printf("%d", p->HasPathTo(j));
-            if (p->TryGetDistanceTo(j).has_value())
-                printf("%d", p->TryGetDistanceTo(j).value());
+            if (p->TryGetShortestPathTo(j).has_value())
+                for (auto x : p->TryGetShortestPathTo(j).value())
+                    printf("%d", x);
         }
         printf("\n");
         delete p;
