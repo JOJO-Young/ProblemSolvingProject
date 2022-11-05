@@ -3,7 +3,6 @@
 
 #include <set>
 #include <map>
-#include <stdio.h>
 #include <queue>
 #include <stack>
 #include <vector>
@@ -25,9 +24,8 @@ DijkstraShortestPaths<TGraph, TValue>::~DijkstraShortestPaths()
 template <template <typename> class TGraph, typename TValue>
 DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue> *graph, int source) : ShortestPaths<TGraph, TValue>(graph, source)
 {
-    std::set<int> if_reach; //用来记录这个点是否到达过，相当于vis
-    std::set<int> if_calculate_weight;
-    std::map<int, int> pre; // pre<a, b>表示b是a的前继
+    std::set<int> if_calculate_weight; //用来计算这个点是否已经计算过权重
+    std::map<int, int> pre;            // pre<a, b>表示b是a的前继
     std::priority_queue<std::pair<TValue, int>, std::vector<std::pair<TValue, int>>, std::greater<std::pair<TValue, int>>> q;
     this->ans_TryGetDistanceTo[source] = TValue();
     q.push(std::make_pair(TValue(), source));
@@ -36,19 +34,18 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
     {
         std::pair<TValue, int> now = q.top();
         q.pop();
-        if (if_reach.find(now.second) != if_reach.end())
+        if (ans_HasPathTo.find(now.second) != ans_HasPathTo.end())
             continue;
-        if_reach.insert(now.second);
+        ans_HasPathTo.insert(now.second);
         for (auto x : graph->GetNeighbors(now.second))
-            if (if_calculate_weight.find(x) == if_calculate_weight.end())
+            if (if_calculate_weight.find(x) == if_calculate_weight.end()) //因为第一次访问而更改权重
             {
                 this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
                 pre[x] = now.second;
-                // printf("yzy%d %d\n", x, now.second);
                 q.push(std::make_pair(this->ans_TryGetDistanceTo[x], x));
                 if_calculate_weight.insert(x);
             }
-            else if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
+            else if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x)) //因为找到更小distance而更改权重
             {
                 this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
                 pre[x] = now.second;
@@ -79,8 +76,6 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
                 s.pop();
             }
             this->ans_TryGetShortestPathTo[record] = ans;
-            // for (auto x : this->ans_TryGetShortestPathTo[record].value())
-            // printf("yzy%d\n", x);
         }
         else
             this->ans_TryGetShortestPathTo[record] = std::nullopt;
