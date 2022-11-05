@@ -4,7 +4,6 @@
 using namespace std;
 int main()
 {
-    printf("123\n");
     auto *g = new WeightedGraph<int>();
     for (int i = 1; i <= 6; ++i)
     {
