@@ -44,12 +44,12 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
                 pre[x] = now.second;
                 q.push(std::make_pair(this->ans_TryGetDistanceTo[x], x));
             }
-            else if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
-            {
-                this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
-                pre[x] = now.second;
-                q.push(std::make_pair(this->ans_TryGetDistanceTo[x], x));
-            }
+        // else if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
+        // {
+        //     this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
+        //     pre[x] = now.second;
+        //     q.push(std::make_pair(this->ans_TryGetDistanceTo[x], x));
+        // }
     }
     for (auto x : graph->GetVertices())
     {
