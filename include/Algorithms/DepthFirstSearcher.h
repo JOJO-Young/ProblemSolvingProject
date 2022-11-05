@@ -59,7 +59,7 @@ std::optional<int> DepthFirstSearcher<TGraph>::TryFindFirstVertex(const TGraph *
       int tmp = s.top();
       if (catched.find(tmp) == catched.end())
       {
-        if(predicate(tmp))
+        if (predicate(tmp))
           return tmp;
         catched.insert(tmp);
       }

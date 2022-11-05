@@ -17,7 +17,6 @@ int main()
     g->AddEdge(1, 4, 4);
     g->AddEdge(4, 1, 4);
     g->AddEdge(5, 6, 5);
-    g->AddEdge(6, 5, 6);
     g->AddEdge(6, 1, 2);
 
     ShortestPaths<UndirectedWeightedGraph, int> *p = nullptr;
