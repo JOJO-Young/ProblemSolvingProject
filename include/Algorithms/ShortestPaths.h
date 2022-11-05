@@ -36,27 +36,6 @@ ShortestPaths<TGraph, TValue>::~ShortestPaths()
 template <template <typename> class TGraph, typename TValue>
 ShortestPaths<TGraph, TValue>::ShortestPaths(const TGraph<TValue> *graph, int source)
 {
-  std::queue<int> q;
-  /*if (graph->ContainsVertex(source))
-  {
-    q.push(source);
-    ans_HasPathTo.insert(source);
-    while (!q.empty())
-    {
-      int tmp = q.front();
-      q.pop();
-      for (auto x : graph->GetNeighbors(tmp))
-      {
-        if (ans_HasPathTo.find(x) == ans_HasPathTo.end())
-        {
-          q.push(x);
-          ans_HasPathTo.insert(x);
-        }
-      }
-    }
-  }*/
-  for (auto x : graph->GetVertices())
-    ans_TryGetShortestPathTo[x] = std::nullopt;
 }
 template <template <typename> class TGraph, typename TValue>
 bool ShortestPaths<TGraph, TValue>::HasPathTo(int destination) const
