@@ -75,5 +75,4 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
             this->ans_TryGetShortestPathTo[record] = std::nullopt;
     }
 }
-
 #endif
