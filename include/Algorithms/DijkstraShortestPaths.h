@@ -26,10 +26,12 @@ template <template <typename> class TGraph, typename TValue>
 DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue> *graph, int source) : ShortestPaths<TGraph, TValue>(graph, source)
 {
     std::set<int> if_reach; //用来记录这个点是否到达过，相当于vis
+    std::set<int> if_calculate_weight;
     std::map<int, int> pre; // pre<a, b>表示b是a的前继
     std::priority_queue<std::pair<TValue, int>, std::vector<std::pair<TValue, int>>, std::greater<std::pair<TValue, int>>> q;
     this->ans_TryGetDistanceTo[source] = TValue();
     q.push(std::make_pair(TValue(), source));
+    if_calculate_weight.insert(source);
     while (!q.empty())
     {
         std::pair<TValue, int> now = q.top();
@@ -38,12 +40,13 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
             continue;
         if_reach.insert(now.second);
         for (auto x : graph->GetNeighbors(now.second))
-            if (if_reach.find(x) == if_reach.end())
+            if (if_calculate_weight.find(x) == if_calculate_weight.end())
             {
                 this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
                 pre[x] = now.second;
                 // printf("yzy%d %d\n", x, now.second);
                 q.push(std::make_pair(this->ans_TryGetDistanceTo[x], x));
+                if_calculate_weight.insert(x);
             }
             else if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
             {
