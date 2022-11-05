@@ -29,7 +29,6 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
     std::priority_queue<std::pair<TValue, int>, std::vector<std::pair<TValue, int>>, std::greater<std::pair<TValue, int>>> q;
     this->ans_TryGetDistanceTo[source] = TValue();
     q.push(std::make_pair(TValue(), source));
-    if_reach.insert(source);
     while (!q.empty())
     {
         std::pair<TValue, int> now = q.top();
