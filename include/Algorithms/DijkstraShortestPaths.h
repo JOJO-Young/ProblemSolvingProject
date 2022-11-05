@@ -68,10 +68,10 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
                 ans.push_back(s.top());
                 s.pop();
             }
-            this -> ans_TryGetShortestPathTo[record] = ans;
+            this->ans_TryGetShortestPathTo[record] = ans;
         }
         else
-            this -> ans_TryGetShortestPathTo[record] = std::nullopt;
+            this->ans_TryGetShortestPathTo[record] = std::nullopt;
     }
 }
 
