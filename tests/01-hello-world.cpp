@@ -35,7 +35,7 @@ int main()
                 for (int k = 1; k < path.size(); ++k)
                 {
                     distance += g->GetWeight(path[k - 1], path[k]);
-                    printf("yzy%d", path[k - 1]);
+                    printf("yzy%d\n", path[k - 1]);
                 }
                 printf("%d", distance);
             }
