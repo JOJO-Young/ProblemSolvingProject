@@ -16,6 +16,11 @@ public:
     DijkstraShortestPaths(const TGraph<TValue> *graph, int source);
     ~DijkstraShortestPaths();
 };
+template <template <typename> class TGraph, typename TValue>
+DijkstraShortestPaths<TGraph, TValue>::~DijkstraShortestPaths()
+{
+
+}
 
 template <template <typename> class TGraph, typename TValue>
 DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue> *graph, int source) : ShortestPaths<TGraph, TValue>(graph, source)
