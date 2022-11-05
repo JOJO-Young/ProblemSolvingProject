@@ -11,6 +11,7 @@ class Graph
 private:
   std::set<int> vertices;
   std::map<int, std::vector<Edge>> edges;
+
 public:
   Graph();
   ~Graph();
