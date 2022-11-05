@@ -34,7 +34,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
             continue;
         if_reach.insert(now.second);
         for (auto x : graph->GetNeighbors(now.second))
-            if (this->ans_TryGetDistanceTo[x] == std::nullopt || this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
+            if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
             {
                 this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
                 pre[x] = now.second;
