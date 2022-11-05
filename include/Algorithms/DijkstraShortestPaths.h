@@ -1,5 +1,5 @@
 #ifndef DIJKSTRA_SHORTEST_PATHS
-#define DIJKSTRA_SHOATEST_PATHS
+#define DIJKSTRA_SHORTEST_PATHS
 
 #include <set>
 #include <map>
