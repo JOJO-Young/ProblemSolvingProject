@@ -148,16 +148,16 @@ bool WeightedGraph<T>::ContainsEdge(int vertex1, int vertex2) const
 template <class T>
 T WeightedGraph<T>::GetWeight(int vertex1, int vertex2) const
 {
-    /*if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
-        return false;*/
+    if (!ContainsVertex(vertex1) || !ContainsVertex(vertex2))
+        return 0;
     class std::map<int, std::vector<WeightedEdge<T>>>::const_iterator it;
     it = edges.find(vertex1);
-    /*if (it == edges.end())
-        return -1;*/
+    if (it == edges.end())
+        return 0;
     for (class std::vector<WeightedEdge<T>>::const_iterator i = edges.at(vertex1).begin(); i != edges.at(vertex1).end(); i++)
         if (i->GetDestination() == vertex2)
             return i->GetWeight();
-    /*return -1;*/
+    return 0;
 }
 
 template <class T>
