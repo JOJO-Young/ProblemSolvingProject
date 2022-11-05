@@ -24,11 +24,12 @@ int main()
         {
             // printf("%d", p->HasPathTo(j));
             if (p->TryGetShortestPathTo(j).has_value())
+            {
                 for (auto x : p->TryGetShortestPathTo(j).value())
-                    printf("%d", x);
+                    printf("%d\n", x);
+            }
+            printf("\n");
+            delete p;
         }
-        printf("\n");
-        delete p;
+        delete g;
     }
-    delete g;
-}
