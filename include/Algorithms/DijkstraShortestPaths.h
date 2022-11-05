@@ -19,7 +19,6 @@ public:
 template <template <typename> class TGraph, typename TValue>
 DijkstraShortestPaths<TGraph, TValue>::~DijkstraShortestPaths()
 {
-
 }
 
 template <template <typename> class TGraph, typename TValue>
