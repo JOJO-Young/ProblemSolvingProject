@@ -22,7 +22,9 @@ int main()
         p = new DijkstraShortestPaths<WeightedGraph, int>(g, i);
         for (int j = 1; j <= 6; ++j)
         {
-            printf("%d", p->HasPathTo(j));
+            // printf("%d", p->HasPathTo(j));
+            if (p->TryGetDistanceTo(j).has_value())
+                printf("%d", p->TryGetDistanceTo(j).value());
         }
         printf("\n");
         delete p;
