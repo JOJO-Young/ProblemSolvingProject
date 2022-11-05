@@ -67,7 +67,7 @@ bool ShortestPaths<TGraph, TValue>::HasPathTo(int destination) const
 template <template <typename> class TGraph, typename TValue>
 std::optional<TValue> ShortestPaths<TGraph, TValue>::TryGetDistanceTo(int destination) const
 {
-  if (ans_HasPathTo.find(destination) != ans_HasPathTo.end())
+  if (ans_TryGetDistanceTo.find(destination) != ans_TryGetDistanceTo.end())
     return ans_TryGetDistanceTo.at(destination);
   else
     return std::nullopt;
@@ -76,7 +76,7 @@ std::optional<TValue> ShortestPaths<TGraph, TValue>::TryGetDistanceTo(int destin
 template <template <typename> class TGraph, typename TValue>
 std::optional<std::vector<int>> ShortestPaths<TGraph, TValue>::TryGetShortestPathTo(int destination) const
 {
-  if (graph->ContainsVertex(destination))
+  if (ans_TryGetShortestPathTo.find(destination) != ans_TryGetShortestPathTo.end())
     return ans_TryGetShortestPathTo.at(destination);
   else
     return std::nullopt;
