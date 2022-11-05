@@ -54,7 +54,6 @@ ShortestPaths<TGraph, TValue>::ShortestPaths(const TGraph<TValue> *graph, int so
   }
   for (auto x : graph->GetVertices())
   {
-    ans_TryGetDistanceTo[x] = (TValue)INT_MAX / 2;
     ans_TryGetShortestPathTo[x] = std::nullopt;
   }
 }
@@ -67,10 +66,10 @@ bool ShortestPaths<TGraph, TValue>::HasPathTo(int destination) const
 template <template <typename> class TGraph, typename TValue>
 std::optional<TValue> ShortestPaths<TGraph, TValue>::TryGetDistanceTo(int destination) const
 {
-  if (ans_TryGetDistanceTo.at(destination) == (TValue)INT_MAX / 2)
-    return std::nullopt;
-  else
+  if (ans_HasPathTo(destination))
     return ans_TryGetDistanceTo.at(destination);
+  else
+    return std::nullopt;
 }
 
 template <template <typename> class TGraph, typename TValue>
