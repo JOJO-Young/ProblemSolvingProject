@@ -28,6 +28,9 @@ public:
 template <template <typename> class TGraph, typename TValue>
 ShortestPaths<TGraph, TValue>::~ShortestPaths()
 {
+  ans_HasPathTo.clear();
+  ans_TryGetDistanceTo.clear();
+  ans_TryGetShortestPathTo.clear();
 }
 
 template <template <typename> class TGraph, typename TValue>
@@ -73,6 +76,9 @@ std::optional<TValue> ShortestPaths<TGraph, TValue>::TryGetDistanceTo(int destin
 template <template <typename> class TGraph, typename TValue>
 std::optional<std::vector<int>> ShortestPaths<TGraph, TValue>::TryGetShortestPathTo(int destination) const
 {
-  return ans_TryGetShortestPathTo.at(destination);
+  if (graph->ContainsVertex(destination))
+    return ans_TryGetShortestPathTo.at(destination);
+  else
+    return std::nullopt;
 }
 #endif
