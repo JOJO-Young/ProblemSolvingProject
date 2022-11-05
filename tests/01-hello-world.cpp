@@ -33,10 +33,7 @@ int main()
                 int distance = 0;
                 const auto &path = o_path.value();
                 for (int k = 1; k < path.size(); ++k)
-                {
                     distance += g->GetWeight(path[k - 1], path[k]);
-                    printf("yzy%d\n", path[k - 1]);
-                }
                 printf("%d", distance);
             }
             else
