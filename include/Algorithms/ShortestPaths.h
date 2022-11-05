@@ -12,7 +12,7 @@ class ShortestPaths
 {
 protected:
   std::set<int> ans_HasPathTo;                                             //用来记录哪些点可到达
-  std::map<int, TValue> ans_TryGetDistanceTo;                                 //用来表示点int的最短路，相当于dis
+  std::map<int, TValue> ans_TryGetDistanceTo;                              //用来表示点int的最短路，相当于dis
   std::map<int, std::optional<std::vector<int>>> ans_TryGetShortestPathTo; //用来记录路径
 
 public:
@@ -54,7 +54,7 @@ ShortestPaths<TGraph, TValue>::ShortestPaths(const TGraph<TValue> *graph, int so
   }
   for (auto x : graph->GetVertices())
   {
-    ans_TryGetDistanceTo[x] = INT_MAX / 2;
+    ans_TryGetDistanceTo[x] = (TValue)INT_MAX / 2;
     ans_TryGetShortestPathTo[x] = std::nullopt;
   }
 }
@@ -67,7 +67,7 @@ bool ShortestPaths<TGraph, TValue>::HasPathTo(int destination) const
 template <template <typename> class TGraph, typename TValue>
 std::optional<TValue> ShortestPaths<TGraph, TValue>::TryGetDistanceTo(int destination) const
 {
-  if (ans_TryGetDistanceTo.at(destination) == INT_MAX / 2)
+  if (ans_TryGetDistanceTo.at(destination) == (TValue)INT_MAX / 2)
     return std::nullopt;
   else
     return ans_TryGetDistanceTo.at(destination);
