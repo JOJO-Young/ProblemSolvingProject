@@ -34,9 +34,9 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
     {
         std::pair<TValue, int> now = q.top();
         q.pop();
-        if (ans_HasPathTo.find(now.second) != ans_HasPathTo.end())
+        if (this->ans_HasPathTo.find(now.second) != this->ans_HasPathTo.end())
             continue;
-        ans_HasPathTo.insert(now.second);
+        this->ans_HasPathTo.insert(now.second);
         for (auto x : graph->GetNeighbors(now.second))
             if (if_calculate_weight.find(x) == if_calculate_weight.end()) //因为第一次访问而更改权重
             {
