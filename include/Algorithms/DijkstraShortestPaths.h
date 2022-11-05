@@ -32,7 +32,7 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
     if_reach.insert(source);
     while (!q.empty())
     {
-        std::pair<int, int> now = q.top();
+        std::pair<TValue, int> now = q.top();
         q.pop();
         if (if_reach.find(now.second) != if_reach.end())
             continue;

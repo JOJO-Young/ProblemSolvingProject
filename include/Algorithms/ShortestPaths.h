@@ -12,7 +12,7 @@ class ShortestPaths
 {
 protected:
   std::set<int> ans_HasPathTo;                                             //用来记录哪些点可到达
-  std::map<int, int> ans_TryGetDistanceTo;                                 //用来表示点int的最短路，相当于dis
+  std::map<int, TValue> ans_TryGetDistanceTo;                                 //用来表示点int的最短路，相当于dis
   std::map<int, std::optional<std::vector<int>>> ans_TryGetShortestPathTo; //用来记录路径
 
 public:
