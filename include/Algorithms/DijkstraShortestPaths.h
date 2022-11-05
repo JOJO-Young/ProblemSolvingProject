@@ -27,8 +27,8 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
     std::set<int> if_reach; //用来记录这个点是否到达过，相当于vis
     std::map<int, int> pre; // pre<a, b>表示b是a的前继
     std::priority_queue<std::pair<TValue, int>, std::vector<std::pair<TValue, int>>, std::greater<std::pair<TValue, int>>> q;
-    this->ans_TryGetDistanceTo[source] = (TValue)0;
-    q.push(std::make_pair((TValue)0, source));
+    this->ans_TryGetDistanceTo[source] = TValue();
+    q.push(std::make_pair(TValue(), source));
     if_reach.insert(source);
     while (!q.empty())
     {
@@ -44,12 +44,12 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
                 pre[x] = now.second;
                 q.push(std::make_pair(this->ans_TryGetDistanceTo[x], x));
             }
-        // else if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
-        // {
-        //     this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
-        //     pre[x] = now.second;
-        //     q.push(std::make_pair(this->ans_TryGetDistanceTo[x], x));
-        // }
+            else if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
+            {
+                this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
+                pre[x] = now.second;
+                q.push(std::make_pair(this->ans_TryGetDistanceTo[x], x));
+            }
     }
     for (auto x : graph->GetVertices())
     {
