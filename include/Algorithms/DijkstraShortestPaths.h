@@ -34,16 +34,13 @@ DijkstraShortestPaths<TGraph, TValue>::DijkstraShortestPaths(const TGraph<TValue
             continue;
         if_reach.insert(now.second);
         for (auto x : graph->GetNeighbors(now.second))
-            if (this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
+            if (this->ans_TryGetDistance[x] == std::nullopt || this->ans_TryGetDistanceTo[x] > this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x))
             {
                 this->ans_TryGetDistanceTo[x] = this->ans_TryGetDistanceTo[now.second] + graph->GetWeight(now.second, x);
                 pre[x] = now.second;
                 q.push(std::make_pair(-1 * this->ans_TryGetDistanceTo[x], x));
             }
     }
-    for (auto x : graph->GetVertices())
-        if (this->ans_TryGetDistanceTo[x] == INT_MAX / 2)
-            this->ans_TryGetDistanceTo[x] = std::nullopt;
     for (auto x : graph->GetVertices())
     {
         int record = x;
