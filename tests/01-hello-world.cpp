@@ -13,7 +13,7 @@ int main()
     g->AddEdge(2, 3, 2);
     g->AddEdge(3, 4, 3);
     g->AddEdge(4, 1, 4);
-    g->AddEdge(5, 6, 5);
+    g->AddEdge(5, 6, 5); 
     g->AddEdge(6, 5, 6);
 
     ShortestPaths<WeightedGraph, int> *p = nullptr;
@@ -31,6 +31,6 @@ int main()
             printf("\n");
             delete p;
         }
-        delete g;
     }
+    delete g;
 }
