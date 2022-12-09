@@ -1,2 +1,0 @@
-/usr/bin/ar qc libGraphLibrary.a CMakeFiles/GraphLibrary.dir/source/DataStructures/Edge.cpp.o CMakeFiles/GraphLibrary.dir/source/DataStructures/Graph.cpp.o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedGraph.cpp.o CMakeFiles/GraphLibrary.dir/source/DataStructures/UndirectedWeightedGraph.cpp.o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedEdge.cpp.o CMakeFiles/GraphLibrary.dir/source/DataStructures/WeightedGraph.cpp.o
-/usr/bin/ranlib libGraphLibrary.a
